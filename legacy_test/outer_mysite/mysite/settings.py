@@ -60,7 +60,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'first_test',
-        'USER': 'admin', 
+        'USER': 'root', 
         'PASSWORD': 'ilike2go',
     }
 }
