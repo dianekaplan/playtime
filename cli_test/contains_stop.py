@@ -19,6 +19,7 @@ import sys      # Used for Command Line Parameters
 def containsStop(seq):
     seqLen = len(seq)  
     number_of_codons = seqLen/3  #I'll ignore extra bases on the end
+    
     #loop through and save the codons
     codon_cursor = 0
     cursor = 0
@@ -31,11 +32,9 @@ def containsStop(seq):
         codon_cursor +=1    
         cursor += 3
         codon_list.append(this_codon)
-    #print codon_list
             
     #then see if any of them are stop codons  
     for codon in codon_list: 
-        #print "I'm checking", codon
         if codon in stop_codons: 
             contains_stop = True
             return contains_stop   
@@ -44,28 +43,24 @@ def containsStop(seq):
         
     return contains_stop        
     
-
-#Now let's call it
-#test_sequence = ''
-#test_sequence = 'TAAGGGGGGGGTAA' 
+# Let's check for a file specified on the command line 
 if (len(sys.argv) != 2):
     print "Usage: python", sys.argv[0], "<filename>"
 else:
     fileName = sys.argv[1]  # Get the file name from the command line
     
-    print fileName   # Echo print 
+    #print fileName   # Echo print 
 
     f = open(fileName, 'r')  # Open the file
-    test_sequence = f.readline() # Read the first line of the Fasta file (describes the file)
-
-    print "Saw", test_sequence
+    file_description = f.readline() # Read the first line of the Fasta file (describes the file)
+    print "This fasta file is:", file_description
 
     #cleanup
     test_sequence = f.read()
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
-    print "Sequence" , test_sequence, "returns ", containsStop(test_sequence)
+    print "For this sequence:" , test_sequence, "contains_stop gives it a value of:", containsStop(test_sequence)
 
 
 
