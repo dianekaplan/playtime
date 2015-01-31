@@ -60,7 +60,7 @@ else:
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
-    print "For this sequence:" , test_sequence, "contains_stop gives it a value of:", containsStop(test_sequence)
+    print "For this sequence:" , test_sequence, "contains_stop gives it a value of:", get_TATAAT_info(test_sequence)
 
 
 
