@@ -40,7 +40,7 @@ def get_TATAAT_info(seq):
         position_of_first = results[0]
         position_of_last = results[TATAAT_count-1]
                       
-    return (position_of_first,position_of_last,TATAAT_count, results)   
+    return (position_of_first,position_of_last,TATAAT_count)   
     
                    
                              
@@ -60,8 +60,7 @@ else:
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
-    print "For this sequence:" , test_sequence, "contains_stop gives it a value of:", get_TATAAT_info(test_sequence)
-
+    print "For this sequence:" , test_sequence, "Location of first instance, last instance, number of instances: ", get_TATAAT_info(test_sequence)
 
 
 
