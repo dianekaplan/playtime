@@ -78,7 +78,7 @@ else:
     #text = text.replace("\n", "")
 
     # Convert to Upper Case
-    test_sequence = text.upper()
+    test_sequence = test_sequence.upper()
     
 
     print "Sequence" , test_sequence, "returns ", containsStop(test_sequence)
