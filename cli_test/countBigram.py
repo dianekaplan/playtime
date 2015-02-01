@@ -31,8 +31,11 @@ else:
     fileName = sys.argv[1]  # Get the file name from the command line
 
     f = open(fileName, 'r')  # Open the file
-    test_sequence = f.read() #UPDATING FOR TEST SEQUENCE, PUT BACK AFTER DOING DISPLAY TESTS
-    
+    file_description = f.readline() # Read the first line of the Fasta file (describes the file)
+    print "This fasta file is:", file_description
+
+    #get our sequence clean
+    test_sequence = f.read()
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
