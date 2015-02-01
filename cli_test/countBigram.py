@@ -40,8 +40,8 @@ else:
     
     #COME BACK AND DO IT WITH LOOPS- X CURSOR AND Y CURSOR
     print "For this sequence:", test_sequence
-    print "      A     C     G     T       "
-    print "A      ", our_results[AA], our_results[AC], our_results[AG], our_results[AT]
-    print "C      ", our_results[CA], our_results[CC], our_results[CG], our_results[CT]
-    print "G      ", our_results[GA], our_results[GC], our_results[GG], our_results[GT]
-    print "T      ", our_results[TA], our_results[TC], our_results[TG], our_results[TT]
+    print "    A C G T       "
+    print "A  ", our_results['AA'], our_results['AC'], our_results['AG'], our_results['AT']
+    print "C  ", our_results['CA'], our_results['CC'], our_results['CG'], our_results['CT']
+    print "G  ", our_results['GA'], our_results['GC'], our_results['GG'], our_results['GT']
+    print "T  ", our_results['TA'], our_results['TC'], our_results['TG'], our_results['TT']
