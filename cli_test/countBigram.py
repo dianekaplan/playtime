@@ -31,11 +31,17 @@ else:
     fileName = sys.argv[1]  # Get the file name from the command line
 
     f = open(fileName, 'r')  # Open the file
-    test_sequence = f.read() #this time the expected data file is the sequence with no header
+    test_sequence = f.read() #UPDATING FOR TEST SEQUENCE, PUT BACK AFTER DOING DISPLAY TESTS
     
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
-    print "For this sequence:", test_sequence, "Here are the counts: ", get_bigram_info(test_sequence)
-
-
+    our_results = get_bigram_info(test_sequence)
+    
+    #COME BACK AND DO IT WITH LOOPS- X CURSOR AND Y CURSOR
+    print "For this sequence:", test_sequence
+    print "      A     C     G     T       "
+    print "A      ", our_results[AA], our_results[AC], our_results[AG], our_results[AT]
+    print "C      ", our_results[CA], our_results[CC], our_results[CG], our_results[CT]
+    print "G      ", our_results[GA], our_results[GC], our_results[GG], our_results[GT]
+    print "T      ", our_results[TA], our_results[TC], our_results[TG], our_results[TT]
