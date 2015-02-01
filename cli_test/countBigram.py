@@ -17,13 +17,11 @@ def get_bigram_info(seq):
     results = {'AA':0, 'AC':0, 'AT':0, 'AG': 0, 'CA':0, 'CC':0, 'CT':0, 'CG': 0,'TA':0, 'TC':0, 'TT':0, 'TG': 0,'GA':0, 'GC':0, 'GT':0, 'GG': 0,} 
 
     #Grab each one, and increment that entry in the dictionary
-    while cursor < seqLen-2: 
+    while cursor < seqLen-1: 
         this_snippet = seq[cursor:cursor+2]
         results[this_snippet] +=1
         cursor +=1        
-    return results  
-    
-                   
+    return results     
                              
     
 # Check for a file specified on the command line 
