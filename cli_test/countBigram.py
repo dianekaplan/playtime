@@ -21,7 +21,7 @@ def get_bigram_info(seq):
         this_snippet = seq[cursor:cursor+2]
         results[this_snippet] +=1
         cursor +=1        
-    return results     
+    return results   
                              
     
 # Check for a file specified on the command line 
