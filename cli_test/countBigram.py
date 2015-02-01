@@ -41,6 +41,6 @@ else:
     test_sequence = test_sequence.replace("\n", "") # Remove any new lines with global search and replace
     test_sequence = test_sequence.upper()  # Convert to Upper Case
 
-    print "For this sequence:", string, "Here are the counts: ", get_bigram_info(string)
+    print "For this sequence:", test_sequence, "Here are the counts: ", get_bigram_info(test_sequence)
 
 
