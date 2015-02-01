@@ -42,7 +42,7 @@ else:
     our_results = get_bigram_info(test_sequence)
     
     #COME BACK AND DO IT WITH LOOPS- X CURSOR AND Y CURSOR
-    print "For this sequence:", test_sequence
+    print "For this file:", fileName
     print "    A C G T       "
     print "A  ", our_results['AA'], our_results['AC'], our_results['AG'], our_results['AT']
     print "C  ", our_results['CA'], our_results['CC'], our_results['CG'], our_results['CT']
