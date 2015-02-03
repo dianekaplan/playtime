@@ -46,7 +46,7 @@ class People(models.Model):
     def __str__(self):
         return self.first
     class Meta:
-        managed = False
+        managed = True
         db_table = 'people'
 
 class Families(models.Model):
@@ -74,7 +74,7 @@ class Families(models.Model):
     def __str__(self):
         return self.caption
     class Meta:
-        managed = False
+        managed = True
         db_table = 'families'
 
 
@@ -89,7 +89,7 @@ class Notes(models.Model):
     activebool = models.IntegerField(db_column='ActiveBool', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'Notes'
 
 
@@ -105,7 +105,7 @@ class Images(models.Model):
     family = models.IntegerField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'images'
 
 
@@ -115,7 +115,7 @@ class Imageperson(models.Model):
     personid = models.IntegerField(db_column='personID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'imagePerson'
 
 
@@ -133,7 +133,7 @@ class Specialinfo(models.Model):
     source = models.CharField(max_length=50, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'specialinfo'
 
 
@@ -144,7 +144,7 @@ class Specialinfoperson(models.Model):
     subjectid = models.IntegerField(db_column='subjectID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'specialinfoPerson'
 
 class Users(models.Model):
@@ -167,7 +167,7 @@ class Users(models.Model):
     furthesthtml = models.CharField(db_column='furthestHTML', max_length=255, blank=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'users'
 
 
@@ -182,7 +182,7 @@ class Updates(models.Model):
     notes = models.CharField(max_length=200, blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'updates'
 
 
