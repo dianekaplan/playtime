@@ -165,7 +165,8 @@ class Users(models.Model):
     connection_notes = models.CharField(max_length=255, blank=True)
     superadmin = models.IntegerField(db_column='superAdmin', blank=True, null=True)  # Field name made lowercase.
     furthesthtml = models.CharField(db_column='furthestHTML', max_length=255, blank=True)  # Field name made lowercase.
-
+    def __str__(self):
+        return self.email
     class Meta:
         managed = True
         db_table = 'users'
