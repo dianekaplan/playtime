@@ -11,7 +11,7 @@
 import string
 import sys
 #import cs58FileUtil  #doing the whole thing didn't work; prepare was considered undefined
-from cs58FileUtil import prepare
+from cs58FileUtil import prepare, readFastaFile
 
 # We can override this value with a Command Line Parameter
 limit = 300  # How many base pairs long must an ORF be? We can override this value with a Command Line Parameter
