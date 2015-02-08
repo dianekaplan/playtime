@@ -105,20 +105,20 @@ def process_all_reading_frames(text, min_ORF_length):
     print_ORFs('-3', frame_a3_ORFs, min_ORF_length, antisense)
     
 # findAllORF
-def findAllOrf(text, limit):  # look for the file, and call the other functions
+#def findAllOrf(text, limit):  # look for the file, and call the other functions
 
 
-    if ((len(sys.argv) < 2) or (len(sys.argv) > 3)):
-        print "Usage: python", sys.argv[0], "<filename> [<min ORF length>]"
-    else:
-        fileName = sys.argv[1]
-        if (len(sys.argv) > 2):             # This should be an integer
-            try:
-                limit = int(sys.argv[2])    # Convert string to integer
-            except ValueError:              # try-except catches errors
-                print "\n\tExpecting an integer to define min ORF length, found",
-                print sys.argv[2]
-                exit()
+if ((len(sys.argv) < 2) or (len(sys.argv) > 3)):
+    print "Usage: python", sys.argv[0], "<filename> [<min ORF length>]"
+else:
+    fileName = sys.argv[1]
+    if (len(sys.argv) > 2):             # This should be an integer
+        try:
+            limit = int(sys.argv[2])    # Convert string to integer
+        except ValueError:              # try-except catches errors
+            print "\n\tExpecting an integer to define min ORF length, found",
+            print sys.argv[2]
+            exit()
 
     
     print "ORF must be at least", limit, "Base pairs long"
