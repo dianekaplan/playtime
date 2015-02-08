@@ -124,6 +124,6 @@ else:
     
     print "ORF must be at least", limit, "Base pairs long"
     
-    text = cs58FileUtil.readFastaFile(fileName)
+    text = readFastaFile(fileName) #remove 'cs58FileUtil" because it was giving a not defined error
     
     process_all_reading_frames(text,limit)
