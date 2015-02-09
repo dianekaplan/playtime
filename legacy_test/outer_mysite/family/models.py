@@ -44,7 +44,7 @@ class People(models.Model):
     flag1 = models.CharField(max_length=255, blank=True)
     flag2 = models.CharField(max_length=255, blank=True)
     def __str__(self):
-        return self.first
+        return self.first, self.last
     class Meta:
         managed = True
         db_table = 'people'
@@ -87,7 +87,8 @@ class Notes(models.Model):
     fromname = models.CharField(db_column='fromName', max_length=50, blank=True)  # Field name made lowercase.
     date = models.DateTimeField(blank=True, null=True)
     activebool = models.IntegerField(db_column='ActiveBool', blank=True, null=True)  # Field name made lowercase.
-
+    def __str__(self):
+        return self.body
     class Meta:
         managed = True
         db_table = 'Notes'
@@ -103,7 +104,8 @@ class Images(models.Model):
     featurebool = models.IntegerField(db_column='featureBool', blank=True, null=True)  # Field name made lowercase.
     year = models.CharField(db_column='Year', max_length=25, blank=True)  # Field name made lowercase.
     family = models.IntegerField(blank=True, null=True)
-
+    def __str__(self):
+        return self.bigname
     class Meta:
         managed = True
         db_table = 'images'
@@ -113,7 +115,8 @@ class Imageperson(models.Model):
     imagegroupid = models.IntegerField(db_column='imageGroupID', primary_key=True)  # Field name made lowercase.
     imageid = models.IntegerField(db_column='imageID', blank=True, null=True)  # Field name made lowercase.
     personid = models.IntegerField(db_column='personID', blank=True, null=True)  # Field name made lowercase.
-
+    def __str__(self):
+        return self.imagegroupid
     class Meta:
         managed = True
         db_table = 'imagePerson'
@@ -131,7 +134,8 @@ class Specialinfo(models.Model):
     text = models.CharField(max_length=255, blank=True)
     page = models.CharField(max_length=50, blank=True)
     source = models.CharField(max_length=50, blank=True)
-
+    def __str__(self):
+        return self.description
     class Meta:
         managed = True
         db_table = 'specialinfo'
@@ -142,7 +146,8 @@ class Specialinfoperson(models.Model):
     infoid = models.IntegerField(db_column='infoID', blank=True, null=True)  # Field name made lowercase.
     type = models.IntegerField(blank=True, null=True)
     subjectid = models.IntegerField(db_column='subjectID', blank=True, null=True)  # Field name made lowercase.
-
+    def __str__(self):
+        return self.specialgroupid
     class Meta:
         managed = True
         db_table = 'specialinfoPerson'
@@ -181,7 +186,8 @@ class Updates(models.Model):
     moderated = models.IntegerField(db_column='Moderated', blank=True, null=True)  # Field name made lowercase.
     status = models.CharField(db_column='Status', max_length=50, blank=True)  # Field name made lowercase.
     notes = models.CharField(max_length=200, blank=True)
-
+    def __str__(self):
+        return self.notes
     class Meta:
         managed = True
         db_table = 'updates'
