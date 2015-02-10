@@ -11,7 +11,7 @@ from __future__ import unicode_literals
 
 from django.db import models
 
-class People(models.Model):
+class Person(models.Model):
     personid = models.IntegerField(db_column='personID', primary_key=True)  # Field name made lowercase.
     first = models.CharField(max_length=15, blank=True)
     middle = models.CharField(max_length=15, blank=True)
@@ -47,9 +47,9 @@ class People(models.Model):
         return self.first, self.last
     class Meta:
         managed = True
-        db_table = 'people'
+        db_table = 'person'
 
-class Families(models.Model):
+class Family(models.Model):
     familyid = models.IntegerField(db_column='familyID', primary_key=True)  # Field name made lowercase.
     caption = models.CharField(max_length=50, blank=True)
     motherid = models.IntegerField(db_column='motherID', blank=True, null=True)  # Field name made lowercase.
@@ -75,10 +75,10 @@ class Families(models.Model):
         return self.caption
     class Meta:
         managed = True
-        db_table = 'families'
+        db_table = 'family'
 
 
-class Notes(models.Model):
+class Note(models.Model):
     noteid = models.IntegerField(db_column='noteID', primary_key=True)  # Field name made lowercase.
     refid = models.IntegerField(db_column='refID', blank=True, null=True)  # Field name made lowercase.
     type = models.IntegerField(db_column='Type', blank=True, null=True)  # Field name made lowercase.
@@ -91,10 +91,10 @@ class Notes(models.Model):
         return self.body
     class Meta:
         managed = True
-        db_table = 'Notes'
+        db_table = 'note'
 
 
-class Images(models.Model):
+class Image(models.Model):
     imageid = models.IntegerField(db_column='imageID', primary_key=True)  # Field name made lowercase.
     bigname = models.CharField(db_column='bigName', max_length=50, blank=True)  # Field name made lowercase.
     stdname = models.CharField(db_column='stdName', max_length=50, blank=True)  # Field name made lowercase.
@@ -108,10 +108,10 @@ class Images(models.Model):
         return self.bigname
     class Meta:
         managed = True
-        db_table = 'images'
+        db_table = 'image'
 
 
-class Imageperson(models.Model):
+class Image_person(models.Model):
     imagegroupid = models.IntegerField(db_column='imageGroupID', primary_key=True)  # Field name made lowercase.
     imageid = models.IntegerField(db_column='imageID', blank=True, null=True)  # Field name made lowercase.
     personid = models.IntegerField(db_column='personID', blank=True, null=True)  # Field name made lowercase.
@@ -119,7 +119,7 @@ class Imageperson(models.Model):
         return self.imagegroupid
     class Meta:
         managed = True
-        db_table = 'imagePerson'
+        db_table = 'image_person'
 
 
 
@@ -127,7 +127,7 @@ class Imageperson(models.Model):
 
 
 
-class Specialinfo(models.Model):
+class Info(models.Model):
     specialid = models.IntegerField(db_column='specialID', primary_key=True)  # Field name made lowercase.
     description = models.CharField(max_length=255, blank=True)
     img = models.CharField(max_length=50, blank=True)
@@ -138,10 +138,10 @@ class Specialinfo(models.Model):
         return self.description
     class Meta:
         managed = True
-        db_table = 'specialinfo'
+        db_table = 'info'
 
 
-class Specialinfoperson(models.Model):
+class Info_person(models.Model):
     specialgroupid = models.IntegerField(db_column='specialgroupID', primary_key=True)  # Field name made lowercase.
     infoid = models.IntegerField(db_column='infoID', blank=True, null=True)  # Field name made lowercase.
     type = models.IntegerField(blank=True, null=True)
@@ -150,9 +150,9 @@ class Specialinfoperson(models.Model):
         return self.specialgroupid
     class Meta:
         managed = True
-        db_table = 'specialinfoPerson'
+        db_table = 'info_person'
 
-class Users(models.Model):
+class User(models.Model):
     userid = models.IntegerField(db_column='userID', primary_key=True)  # Field name made lowercase.
     email = models.CharField(max_length=50, blank=True)
     sharedaccount = models.IntegerField(db_column='sharedAccount', blank=True, null=True)  # Field name made lowercase.
@@ -174,10 +174,10 @@ class Users(models.Model):
         return self.email
     class Meta:
         managed = True
-        db_table = 'users'
+        db_table = 'user'
 
 
-class Updates(models.Model):
+class User_update(models.Model):
     changeid = models.IntegerField(db_column='changeID', primary_key=True)  # Field name made lowercase.
     userid = models.IntegerField(db_column='userID', blank=True, null=True)  # Field name made lowercase.
     personid = models.IntegerField(db_column='personID', blank=True, null=True)  # Field name made lowercase.
@@ -190,6 +190,6 @@ class Updates(models.Model):
         return self.notes
     class Meta:
         managed = True
-        db_table = 'updates'
+        db_table = 'user_update'
 
 
