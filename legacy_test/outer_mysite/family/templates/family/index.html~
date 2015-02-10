@@ -1,0 +1,9 @@
+Family index page:
+{% if family_list %}
+   <ul>
+   {% for family in family %}
+      <li><a href="/polls/{{familyID}}/">{{family.caption}}</a></li>
+   {% endfor %}
+{% else %}
+      <p>No families are available. </p>
+{% endif%}
