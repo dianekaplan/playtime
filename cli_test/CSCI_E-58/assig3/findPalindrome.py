@@ -7,15 +7,13 @@
 
 #Assumptions & Limitations: 
 # Citations: This makes use of Jeff Parker's cs58FileUtil.py for reading file and doing cleanup
+# Tested: 
 
 import string
 import sys
-#import cs58FileUtil  #doing the whole thing didn't work; prepare was considered undefined
-from cs58FileUtil import prepare, readFastaFile
+import cs58FileUtil  #doing the whole thing didn't work; prepare was considered undefined
+#from cs58FileUtil import prepare, readFastaFile
 
-# We can override this value with a Command Line Parameter
-limit = 300  # How many base pairs long must an ORF be? We can override this value with a Command Line Parameter
-snippet_length= 45 #How many bp to print for each (assumed to be less than limit, otherwise we'll go out of bounds)
 DEBUG = False
 
 def reverseComplement(sequence):
@@ -54,8 +52,7 @@ def find_longest_palindrome (text):
 
     return best_so_far 
 
-                    
-
+                
 
 if ((len(sys.argv) < 2) or (len(sys.argv) > 3)):
     print "Usage: python", sys.argv[0], "<filename>"
@@ -65,12 +62,10 @@ else:
         try:
             limit = int(sys.argv[2])    # Convert string to integer
         except ValueError:              # try-except catches errors
-            print "\n\tExpecting an integer to define min ORF length, found",
             print sys.argv[2]
             exit()
-
-    
-    
+            
     
     text = readFastaFile(fileName) #remove 'cs58FileUtil" because it was giving a not defined error
+    text = prepare(text)
     print find_longest_palindrome (text)
