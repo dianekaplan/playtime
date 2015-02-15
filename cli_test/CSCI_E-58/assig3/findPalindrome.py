@@ -11,8 +11,8 @@
 
 import string
 import sys
-import cs58FileUtil  #doing the whole thing didn't work; prepare was considered undefined
-#from cs58FileUtil import prepare, readFastaFile
+#import cs58FileUtil  #doing the whole thing didn't work; prepare was considered undefined
+from cs58FileUtil import prepare, readFastaFile
 
 DEBUG = False
 
