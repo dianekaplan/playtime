@@ -13,7 +13,8 @@ import sys
 from cs58FileUtil import prepare, readFastaFile
 
 DEBUG = False
-#make a dictionary of the strings of this length, and the instance count of each
+
+#make/return a dictionary of the strings of this length, with the count of each instance
 def make_strings_of_length (text, size):  
     length = len(text)
     result_dictionary = {}
@@ -22,7 +23,7 @@ def make_strings_of_length (text, size):
     while cursor < length-size+1: 
         this_snippet = text[cursor:cursor+size]
         
-        # if it's in the dictionary increment count, otherwise add it
+        # if it's already in the dictionary increment the count, otherwise add it
         if result_dictionary.get(this_snippet): 
             result_dictionary[this_snippet] +=1
         else:
@@ -31,7 +32,7 @@ def make_strings_of_length (text, size):
 
     return result_dictionary
 
-
+#for a sequence, return the size of the longest repeat and the string (#NOTE: we don't return all if there are multiples)
 def find_biggest_repeat (text):
     seq_length = len(text)
     
@@ -43,10 +44,9 @@ def find_biggest_repeat (text):
     biggest_repeat = ''
     not_stumped = True  #keep increasing size until there's one where we're stumped
     best_result = {}
-    while (attempting_length < seq_length/2 and not_stumped): #best case for a long repeat would be two long ones back to back
-        #print "We're on: ", attempting_length
+    while (attempting_length < seq_length/2 and not_stumped): #stop at seq_length/2 because best case for a long repeat is two long ones back to back 
         this_result = make_strings_of_length (seq, attempting_length)
-        winner = max(this_result, key=this_result.get) #NOTE: when there's a tie we're just giving back one
+        winner = max(this_result, key=this_result.get) 
 
         if this_result[winner] > 1:
             biggest_repeat_length =  attempting_length 
@@ -56,8 +56,9 @@ def find_biggest_repeat (text):
             not_stumped = False
         attempting_length +=1 
         
-    #if (DEBUG):
-    #    return biggest_repeat_length, biggest_repeat, best_result         
+    if (DEBUG):
+        return biggest_repeat_length, biggest_repeat, best_result 
+                
     return biggest_repeat_length, biggest_repeat
 
 
@@ -73,9 +74,8 @@ else:
             print "\n\tExpecting an integer to define min ORF length, found",
             print sys.argv[2]
             exit()
-
     
     
-    seq = readFastaFile(fileName) #remove 'cs58FileUtil" because it was giving a not defined error
+    seq = readFastaFile(fileName) 
     seq = prepare(seq)
     print "The biggest repeat in this sequence is: ",find_biggest_repeat(seq)
