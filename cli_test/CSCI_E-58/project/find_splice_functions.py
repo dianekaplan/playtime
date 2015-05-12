@@ -6,6 +6,7 @@
 # Assumptions and limitations: 
 #Citations: 
 #I'm using the general base frequencies for humans from here: http://seqanswers.com/forums/archive/index.php/t-12359.html
+#find_change_points logic is based on these frequencies: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC403801/figure/fig1/
 
 import string
 import sys
@@ -256,19 +257,30 @@ def find_change_points(sequence):
     #Next, let's see which ones had a big (quantify) change from one chunk to the next
     number_of_chunks = len(segments_list)
     counter = 0
+    motif_type=''
     while (counter < number_of_chunks-1):
         first_list = segments_list[counter]
         second_list =segments_list[counter+1]
+        big_change_found = False
         
-        A_delta = abs(first_list[1]-second_list[1])
-        C_delta = abs(first_list[2]-second_list[2])
-        G_delta = abs(first_list[3]-second_list[3])
-        T_delta = abs(first_list[4]-second_list[4])
-        
-        #If any of the frequencies change a lot, save this to our change_points_list
-        if A_delta > change_threshold or C_delta > change_threshold or G_delta > change_threshold or T_delta > change_threshold:
-            change_points_list.append([first_list[0], A_delta, C_delta, G_delta, T_delta]) 
-       
+        A_delta = (first_list[1]-second_list[1])
+        C_delta = (first_list[2]-second_list[2])
+        G_delta = (first_list[3]-second_list[3])
+        T_delta = (first_list[4]-second_list[4])
+        #T_delta = abs(first_list[4]-second_list[4])
+
+        #If any of the frequencies change a lot, save this to our change_points_list: donor or acceptor depending on the details      
+        ##before-vs-after donor sites, C&G go down and T goes up
+        if C_delta > change_threshold or G_delta > change_threshold or (T_delta*-.01) > change_threshold: 
+            motif_type = 'donor'
+            big_change_found = True
+        #before-vs-after acceptor sites, C&G go up and T goes down
+        if T_delta > change_threshold or (C_delta *-1.0) > change_threshold or (G_delta *-1.0) > change_threshold: 
+            motif_type = 'acceptor'
+            big_change_found = True
+            
+        if big_change_found:
+            change_points_list.append([first_list[0], motif_type, A_delta, C_delta, G_delta, T_delta])        
         #print counter, segments_list[counter], segments_list[counter+1], A_delta, C_delta, G_delta, T_delta
         counter += 1
     
@@ -278,44 +290,44 @@ def find_change_points(sequence):
 def put_it_all_together(sequence):
     seq = sequence
     seq = prepare(seq)
+    cleaned_up_seq = ''
+    winning_donor= []
+    winning_acceptor=[]
+    confirmed_donor_list=[]
+    confirmed_acceptor_list=[]
    
     #First, we need to break it up into the rough chunks where transitions are happening 
     chunk_locations_list = find_change_points(seq)
     
     #FOR GETTING ROLLING, REPLACE IT WITH THE RIGHT VALUE FOR seq3
     ##splice sites are at: 85, 284, 360, 559, 631, so if find_change_points nailed it I'd expect positions of: 
-    chunk_locations_list = [[75, 0, 0, 0, 0], [250, 0, 0, 0, 0], [325, 0, 0, 0, 0], [525, 0, 0, 0, 0], [600, 0, 0, 0, 0]] 
+    chunk_locations_list = [[75, 'donor', 0, 0, 0, 0], [250, 'acceptor', 0, 0, 0, 0], [325, 'donor', 0, 0, 0, 0], [525, 'acceptor', 0, 0, 0, 0], [600,'donor', 0, 0, 0, 0]] 
     #reminder: these are positions now (not cursor)
-
+    
     for chunk in chunk_locations_list: 
         temp_string = seq[chunk[0]-1:chunk[0]+100] #subtract 1 to use cursor instead of position
-        this_string_acceptors = find_motif(temp_string, 'acceptor',chunk[0])
-        this_string_donors= find_motif(temp_string, 'donor', chunk[0]) 
+        motif_type = chunk[1]
         
-        winning_donor = get_winner(this_string_donors) 
-        winning_acceptor = get_winner(this_string_acceptors) 
-        print "Winning acceptor site: ", winning_acceptor, "and the winning donor site: ", winning_donor
+        if motif_type =='donor':
+            this_string_donors= find_motif(temp_string, 'donor', chunk[0])
+            winning_donor = get_winner(this_string_donors) 
+            #print "Winning donor site: ", winning_donor
+            confirmed_donor_list.append(winning_donor)
+
+        if motif_type =='acceptor':         
+            this_string_acceptors = find_motif(temp_string, 'acceptor',chunk[0])
+            winning_acceptor = get_winner(this_string_acceptors) 
+            #print "Winning acceptor site: ", winning_acceptor
+            confirmed_acceptor_list.append(winning_acceptor)
         
-        #PROBLEM: Now that you added cursor offset, confirm it's cursor vs position (not off by 1)
-        #In these areas of change, I'm expecting one type, not both- how do I approach this better?
-
-        #may have general off by one on first chunk (86 instead of 85)
-        #didn't get the positions I expected, need to look and see why)
+    #print "Acceptor list: ", confirmed_acceptor_list
+    #print "Donor list: ", confirmed_donor_list
+    cleaned_up_seq = make_clean_seq (seq, confirmed_donor_list, confirmed_acceptor_list)
         
-    return chunk_locations_list
+
+    return cleaned_up_seq
         
-##expect 5 change points: (732 total)
-seq3='ATGGCGGAGCCAGATCTGGAGTGCGAGCAGATCCGTCTGAAGTGTATTCGTAAGGAGGGCTTCTTCACGGTGCCTCCGGAACACAGGgtgcgcggggtgccacccgggcagctctgcccgcctcgctagcggcactgcccggctgggtctggggagcctcgtgtcgcgctgccgcgccgaggcttccaagacgtgagtgggctccctggtacaaattccatttgaaatttcctcagttgttccatcagctgccaaatttccacactggcaacacccttctgtttcagCTGGGACGATGCCGGAGTGTGAAGGAGTTTGAGAAGCTGAACCGCATTGGAGAGGGTACCTACGGCATTGTGTgtgagtggccaaggctaggacatgtggccgcagctcgtggctgtgacagtgtgggacgagactgtcgaagcagcagccgcgttggggctggaagggactcaacggggacccctgtggctcagggagagcctcccgttcagcgctagggagcccacgaggggcatcgagatgatgtcatcaccaatgtgtttccattccagATCGGGCCCGGGACACCCAGACAGATGAGATTGTCGCACTGAAGAAGGTGCGGATGGACAAGGAGAAGGATGgtgagcaggaaattggggtgttgggacctcgcactgggaggagcagaaggatgtgagttacctgaagtttcctcagagcgactgcacggtgcttgtagc'
-#
 
-
-#print find_change_points(seq2)
-
-
-print put_it_all_together(seq3)
-
-
-       
 if (DEBUG):
     print "Debug mode is turned on. "
 
