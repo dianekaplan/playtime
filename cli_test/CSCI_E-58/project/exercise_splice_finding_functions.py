@@ -2,7 +2,7 @@
 # Diane Kaplan        April - May 2015
 #
 # Usage:
-#     % python exercise_splice_finding_functions.py <filename> [<minimal ORF length>]
+#     % python exercise_splice_finding_functions.py 
 # Assumptions and limitations: (none)
 # Citations: (none)
 

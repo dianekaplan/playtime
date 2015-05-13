@@ -1,6 +1,8 @@
 # exercise_whole_sequence_functions.py    This program demos make_clean_seq and put_it_all_together
 # Diane Kaplan        April - May 2015
 #
+# Usage:
+#     % python exercise_whole_sequence_functions.py 
 # Assumptions and limitations: (none)
 # Citations: (none)
 
