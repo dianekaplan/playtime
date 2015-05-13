@@ -1,49 +1,50 @@
-# exercise_make_clean_seq.py    This program demos make_clean_seq, using the alphabet because it's recognizable
+# exercise_whole_sequence_functions.py    This program demos make_clean_seq and put_it_all_together
 # Diane Kaplan        April - May 2015
 #
 # Assumptions and limitations: (none)
 # Citations: (none)
-#
-#import string
-#import sys
-#from cs58FileUtil import prepare, readFastaFile
-#import profile
 
 from find_splice_functions import make_clean_seq, put_it_all_together
 
 
-#=== Value & commands for sequence demo=====   
-##expect 5 change points: (732 total)
+# === Value & commands for sequence demo=====   
+# CDK10 gene, including exons 1-3 (in CAPS) and shortened intron chunks (lowercase)
+# In this file I did NOT include cs58FileUtil for the prepare function, so I could see any mistaken lowercase intron bases 
 seq3='ATGGCGGAGCCAGATCTGGAGTGCGAGCAGATCCGTCTGAAGTGTATTCGTAAGGAGGGCTTCTTCACGGTGCCTCCGGAACACAGGgtgcgcggggtgccacccgggcagctctgcccgcctcgctagcggcactgcccggctgggtctggggagcctcgtgtcgcgctgccgcgccgaggcttccaagacgtgagtgggctccctggtacaaattccatttgaaatttcctcagttgttccatcagctgccaaatttccacactggcaacacccttctgtttcagCTGGGACGATGCCGGAGTGTGAAGGAGTTTGAGAAGCTGAACCGCATTGGAGAGGGTACCTACGGCATTGTGTgtgagtggccaaggctaggacatgtggccgcagctcgtggctgtgacagtgtgggacgagactgtcgaagcagcagccgcgttggggctggaagggactcaacggggacccctgtggctcagggagagcctcccgttcagcgctagggagcccacgaggggcatcgagatgatgtcatcaccaatgtgtttccattccagATCGGGCCCGGGACACCCAGACAGATGAGATTGTCGCACTGAAGAAGGTGCGGATGGACAAGGAGAAGGATGgtgagcaggaaattggggtgttgggacctcgcactgggaggagcagaaggatgtgagttacctgaagtttcctcagagcgactgcacggtgcttgtagc'
 
 
     
-#=== Value & commands for alphabet demo=====    
+# === Value & commands for alphabet demo=====    
 seq= 'abcdXXXXXXXXXXXXXXefghijklXXXXXXXXXXXXXXXXXXXXXXXXXXmnopqrsXXXXXXXXXXXXXtuvwxyz'
 
-#for donor motif, the first 3 bases are still exon, then intron starts at 4: 
-#for acceptor motif (scored as a 14mer), exclude everything but the last 2: acag|AG
+# For donor motif, the first 3 bases are still exon, then intron starts at 4: 
+# For acceptor motif (scored as a 14mer), exclude everything but the last 2: acag|AG
 donor_list= [[2], [24], [57]]
-acceptor_list = [[6], [40], [60]]
+acceptor_list = [[7], [41], [61]]
 
-#Let's update the splice sites as if that first intron goes the rest of the way
+# Let's update the splice sites as if that first intron goes the rest of the way
 donor_list2= [[2]] 
-acceptor_list2 = [[len(seq)]]  #usage for cases where there's only a donor site (seq only has exon-intron)
+acceptor_list2 = [[len(seq)]]  # usage for cases where there's only a donor site (seq only has exon-intron)
 
-#Now let's update the splice sites as if it's intron all the way to tuvwyz
-donor_list3= [[len(seq)]]  #usage for cases where there's only an acceptor site (seq only has intron-exon)
-acceptor_list3 = [[60]]
+# Now let's update the splice sites as if it's intron all the way to tuvwyz
+donor_list3= [[len(seq)]]  # usage for cases where there's only an acceptor site (seq only has intron-exon)
+acceptor_list3 = [[61]]
 
-#Finally, see what happens if we pass an empty list 
-donor_list4= []  #usage for cases where there's only an acceptor site (seq only has intron-exon)
-acceptor_list4 = [[60]]
+# Finally, see what happens if we pass an empty list 
+donor_list4= []  
+acceptor_list4 = [[61]]
 
 print "First, let's run put_it_all_together for a 3-intron sequence: "
 print seq3
 print "\nThe cleaned up result we get back is:" 
 print put_it_all_together(seq3)
        
-       
+print "To more easily be able to see that the parts are right:"
+
+print "Here's from the beginning to donor at 85: " , seq3[0:85+3-1]  #we go to the cursor +3 because donor, -1 because cursor not position
+print "Here's the next chunk, from acceptor at 276 to donor at 358: " , seq3[276+14-2-1:358+3-1]        
+print "Here's the next chunk, from acceptor at 549 to donor at 630: " , seq3[549+14-2-1:630+3-1]    
+
 
 print "\nNow, using a more visible example (the alphabet), let's look closer at make_clean_seq.  We'll test using: "
 print seq
