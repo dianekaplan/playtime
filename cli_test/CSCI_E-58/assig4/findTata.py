@@ -27,6 +27,8 @@ def get_upstream_motifs(frame, ORF_dict, min_ORF_length, sequence):
             length = ORF_dict[ORF] + 1 - ORF #we want the length in bases, so just like slicing we need to go one past the end
             
             upstream_words = []
+            best_hamming = 3 #initialize at 3 for each ORF
+            best_one_this_ORF = ''
             
             if length >= min_ORF_length:
                     upstream_words.append (sequence[ORF-11:ORF-5])
@@ -40,11 +42,16 @@ def get_upstream_motifs(frame, ORF_dict, min_ORF_length, sequence):
                         for x in xrange(0,5): 
                             if TATAA[x] != variation[x]: 
                                 hamming_dist +=1
-                        if hamming_dist < 3:
-                            motif_list.append(variation)
+                        if hamming_dist < 3: #if we're in the ballpark, then see if it's the best yet for this upstream area
+                            if hamming_dist < best_hamming: 
+                                best_one_this_ORF = variation
+                                best_hamming = hamming_dist
                         if (DEBUG):
                             print frame, "Start", ORF, "End", ORF_dict[ORF],"Len" ,length, "Seq", sequence[ORF-1:ORF-1 + snippet_length] , "... Upstream has:", variation, hamming_dist
-        
+                    
+                    if best_one_this_ORF != '':  #if we have a qualifying snippet for this ORF, add it
+                        motif_list.append(best_one_this_ORF)
+                        
         if (DEBUG):
           print motif_list       
     return motif_list
