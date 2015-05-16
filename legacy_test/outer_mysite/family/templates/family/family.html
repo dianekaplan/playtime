@@ -1,9 +1,12 @@
-<h1>{{ family.caption}}</h1>
+<h1>{{ family_info.caption}}</h1>
 
-Welcome to the family detail template page for family: {{ family }} <br/>
-
-Next need to figure out why this syntax pulls individual field values on index.html but not here: 
-{{family.caption}}
+Welcome to the family detail template page for family:  <br/>
 
 
+{% if family_info %}
+<p>{{family_info.caption}}</p>
 
+
+{% else %}
+      <p>We cannot access family_info</p>
+{% endif%}
