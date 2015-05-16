@@ -1,0 +1,9 @@
+Person index page:
+{% if person_list %}
+   <ul>
+   {% for person in person_list %}
+      <li><a href="/family/person/{{person.personid}}/">{{person.first}} {{person.last}}</a></li>
+   {% endfor %}
+{% else %}
+      <p>No person records are available. </p>
+{% endif%}
