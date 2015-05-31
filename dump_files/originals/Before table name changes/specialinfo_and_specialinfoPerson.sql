@@ -1,4 +1,4 @@
-﻿
+﻿#
 #
 # Table structure for table 'specialinfo'
 #
@@ -22,13 +22,13 @@ SET autocommit=1;
 # Dumping data for table 'specialinfo'
 #
 
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (797, 'Glaser family and the civil war', NULL, 'At that time the country was torn by the Civil War (1861-1865) in which nearly half a million American soldiers lost their lives, more than in the second World War! The three youngest, American-born sons had followed Lincoln\'s call to volunteer…', 'glasersCivilwar.htm', 'Sheila Glaser Bultmann\'s paper');
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (798, 'Frank Glaser\'s Strykersville Brewery', NULL, 'The most disastrous fire this village has ever known occurred on Fri. afternoon, Aug 13, 1909. The large brewery with Hotel attached, owned by Frank Glaser…', 'frankGlaserBrewery.htm', 'Compiled by Mary Ann Metzger');
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (799, 'Peter Reisdorf\'s Mill', NULL, 'The Reisdorfs operated a saw mill, grist mill, cider mill and the cooper shop, where he made barrels. The waterfall on the creek provided power to operate the mill and several hired men and later family members labored in the mills and farm operation…', 'PeterReisdorfMill.htm', 'Compiled by Mary Ann Metzger');
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (800, 'John Keem\'s Obituary', NULL, 'John Keem, a well known and nearly life long resident of Wales, died at his home in that town on Wednesday, January 30, after a lingering illness at the age of 84 years…', 'JohnKeemObit.htm', NULL);
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (801, 'Mary Reisdorf\'s Obituary', NULL, 'We are pained to announce the death of Mrs. Mary Glaser, wife of Peter Reisdorf, which occurred at her late home in Strykersville, N.Y., April 20th 1890, at the age of 59 years 11 months, 13 days, of stomach difficulty…', 'MaryReisdorfObit.htm', NULL);
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (802, 'Emily Tusk\'s Obituary', NULL, 'Mrs. Emily Tusk, one of Sheldon\'s most remarkable women passed away at the home of her son Albert Smith at Wales Center Sunday afternoon at 2 o\'clock, March 3rd after a week\'s illness of influenza followed by pneumonia...', 'EmilyTuskObit.htm', NULL);
-INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (803, 'Frank Glaser\'s Civil War Soldier Record', NULL, 'Name: Frank Gleaser<br/>Enlistment Date: 11 August 1862  <br/>Distinguished Service: DISTINGUISHED SERVICE <br/>…', 'FrankGlaserSoldier.htm', 'Mary Ann Metzger');
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (797, 'Glaser family and the civil war', NULL, 'At that time the country was torn by the Civil War (1861-1865) in which nearly half a million American soldiers lost their lives, more than in the second World War! The three youngest, American-born sons had followed Lincoln''s call to volunteer…', 'glasersCivilwar.htm', 'Sheila Glaser Bultmann''s paper');
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (798, 'Frank Glaser''s Strykersville Brewery', NULL, 'The most disastrous fire this village has ever known occurred on Fri. afternoon, Aug 13, 1909. The large brewery with Hotel attached, owned by Frank Glaser…', 'frankGlaserBrewery.htm', 'Compiled by Mary Ann Metzger');
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (799, 'Peter Reisdorf''s Mill', NULL, 'The Reisdorfs operated a saw mill, grist mill, cider mill and the cooper shop, where he made barrels. The waterfall on the creek provided power to operate the mill and several hired men and later family members labored in the mills and farm operation…', 'PeterReisdorfMill.htm', 'Compiled by Mary Ann Metzger');
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (800, 'John Keem''s Obituary', NULL, 'John Keem, a well known and nearly life long resident of Wales, died at his home in that town on Wednesday, January 30, after a lingering illness at the age of 84 years…', 'JohnKeemObit.htm', NULL);
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (801, 'Mary Reisdorf''s Obituary', NULL, 'We are pained to announce the death of Mrs. Mary Glaser, wife of Peter Reisdorf, which occurred at her late home in Strykersville, N.Y., April 20th 1890, at the age of 59 years 11 months, 13 days, of stomach difficulty…', 'MaryReisdorfObit.htm', NULL);
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (802, 'Emily Tusk''s Obituary', NULL, 'Mrs. Emily Tusk, one of Sheldon''s most remarkable women passed away at the home of her son Albert Smith at Wales Center Sunday afternoon at 2 o''clock, March 3rd after a week''s illness of influenza followed by pneumonia...', 'EmilyTuskObit.htm', NULL);
+INSERT INTO `specialinfo` (`specialID`, `description`, `img`, `text`, `page`, `source`) VALUES (803, 'Frank Glaser''s Civil War Soldier Record', NULL, 'Name: Frank Gleaser<br/>Enlistment Date: 11 August 1862  <br/>Distinguished Service: DISTINGUISHED SERVICE <br/>…', 'FrankGlaserSoldier.htm', 'Mary Ann Metzger');
 # 7 records
 
 #
@@ -101,3 +101,5 @@ INSERT INTO `specialinfoPerson` (`specialgroupID`, `infoID`, `type`, `subjectID`
 INSERT INTO `specialinfoPerson` (`specialgroupID`, `infoID`, `type`, `subjectID`) VALUES (45, 803, 1, 811);
 INSERT INTO `specialinfoPerson` (`specialgroupID`, `infoID`, `type`, `subjectID`) VALUES (46, 797, 1, 812);
 # 46 records
+
+#
