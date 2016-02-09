@@ -18,7 +18,7 @@ int GetShowerLength();
 
 // values for shower flow and bottle size
 int shower_oz_per_minute = 192;
-int ounces_per_bottle = 16;
+int oz_per_bottle = 16;
 
 
 int main(void)
@@ -55,6 +55,6 @@ int GetShowerLength()
  */
 int ConvertToBottles(int shower_min)
 {
-    int converted_bottle_count = (shower_min * shower_oz_per_minute) / ounces_per_bottle;
+    int converted_bottle_count = (shower_min * shower_oz_per_minute) / oz_per_bottle;
     return converted_bottle_count;
 }

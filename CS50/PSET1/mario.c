@@ -30,7 +30,7 @@ int main(void)
     // Output the height entered, and draw the two half pyramids
     else 
     {
-        printf("Height: %i\n", height); 
+        // printf("Height: %i\n", height); 
         
         for (int i = 1; i <= height; i++)
         {
@@ -51,10 +51,11 @@ int main(void)
             PrintBlocks(i);
             
             // Print the space between the two sections
-            for (int this_space = 0; this_space < space_between_halves; this_space++)
-            {
-                printf(" ");
-            }
+            // I started with a for loop, office hours 
+            // suggested it could be quicker, so I googled
+            // for repeating a character
+            printf("%*s", space_between_halves, " " );
+            
             
             // Print the right half
             PrintBlocks(i);
