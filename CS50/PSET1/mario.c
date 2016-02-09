@@ -4,7 +4,7 @@
  * Diane Kaplan
  * dianekaplan@gmail.com
  * 
- * Prompt the user for half-pyramids' height (non-negative, no greater than 23), then draw it!
+ * Prompt user for half-pyramids' height (non-negative, <= 23), then draw it
  * */
 
 #include <cs50.h>
@@ -12,7 +12,7 @@
 
 // prototypes
 int GetHeight(void);
-void PrintBlockRow(int);
+void PrintBlocks(int);
 
 
 int main(void)
@@ -23,30 +23,32 @@ int main(void)
     
     if (height < 1) 
     {
-            // nothing to draw
-            exit(0);
+        // nothing to draw
+        exit(0);
     }
     
-    else // Output the height entered, and draw the two half pyramids
+    // Output the height entered, and draw the two half pyramids
+    else 
     {
         printf("Height: %i\n", height); 
         
         for (int i = 1; i <= height; i++)
         {
             /**
-            * Print the left half.  This one aligns the blocks to the right, so there'll
-            *  be spaces to output before the number of blocks (in all but the bottom row).
+            * Print the left half.  This one aligns the blocks to the right, 
+            * so there'll be spaces to output before the 
+            * number of blocks (in all but the bottom row).
             */
-            int number_of_spaces = (height - i);
+            int num_of_spaces = (height - i);
             
             // Print the leading spaces
-            for (int space_count = 0; space_count < number_of_spaces; space_count++)
+            for (int space_count = 0; space_count < num_of_spaces; space_count++)
             {
                 printf(" ");
             }
             
             // Print the blocks
-            PrintBlockRow(i);
+            PrintBlocks(i);
             
             // Print the space between the two sections
             for (int this_space = 0; this_space < space_between_halves; this_space++)
@@ -55,7 +57,7 @@ int main(void)
             }
             
             // Print the right half
-            PrintBlockRow(i);
+            PrintBlocks(i);
             
             // Row is complete, onto the next line!
             printf("\n");
@@ -70,23 +72,24 @@ int main(void)
  */
 int GetHeight()
 {
-    int collected_height; 
+    int height; 
     do
     {
         printf("Please enter non-negative int no greater than 23: \n");
-        collected_height = GetInt();
+        height = GetInt();
     }
-    while ( (collected_height < 0 ) || (collected_height > 23));  //don't take it until it satisfies the rules
-    return collected_height;
+    // don't take it until it satisfies the rules
+    while ( (height < 0 ) || (height > 23));  
+    return height;
 }
 
 /**
  * Print a row of blocks (broke this out since the program does it twice)
  */
-void PrintBlockRow(int width)
+void PrintBlocks(int width)
 {
     for (int this_block = 0; this_block < width; this_block++)
-        {
-            printf("#");
-        }
+    {
+        printf("#");
+    }
 }

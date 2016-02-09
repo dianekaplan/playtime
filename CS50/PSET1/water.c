@@ -17,7 +17,7 @@ int ConvertToBottles(int shower_min);
 int GetShowerLength();
 
 // values for shower flow and bottle size
-int shower_ounces_per_minute = 192;
+int shower_oz_per_minute = 192;
 int ounces_per_bottle = 16;
 
 
@@ -45,17 +45,16 @@ int GetShowerLength()
         printf("How many minutes was your shower: ");
         shower_length = GetInt();
     }
-    while ( shower_length < 1 );  //don't take it unless the integer is non-negative
+    // don't take it unless the integer is non-negative
+    while ( shower_length < 1 );  
     return shower_length;
 }
-
-
 
 /**
  * Convert length of shower in minutes to bottles of water used
  */
 int ConvertToBottles(int shower_min)
 {
-    int converted_bottle_count = (shower_min * shower_ounces_per_minute)/ounces_per_bottle;
+    int converted_bottle_count = (shower_min * shower_oz_per_minute) / ounces_per_bottle;
     return converted_bottle_count;
 }

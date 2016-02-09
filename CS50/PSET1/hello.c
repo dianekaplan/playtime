@@ -7,7 +7,7 @@
  * First program: output 'hello, world'
  * */
  
- #include <stdio.h>
+#include <stdio.h>
 
 int main(void)
 {
