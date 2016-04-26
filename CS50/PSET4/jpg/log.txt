@@ -1,0 +1,240 @@
+The thing saved at your pointer is: 372
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 2309
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 765
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 34
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 56
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 34
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 34
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 45
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 45
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 23
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 453
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 342
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 345
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 234
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 343
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 324
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 3423
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 343
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 343
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 3434
+And here are some numbers:
+1
+2
+3
+4
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4

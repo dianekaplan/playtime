@@ -1,0 +1,88 @@
+Diane Kaplan- CS50 PSET4
+
+0. How many different colors does each format support?
+BMP: over 4 billion colors (32 bit) 
+GIF: 256 colors (8 bits)
+JPEG: 16.7 million colors (24 bit) 
+PNG: over 16 million colors (supports 8-bit color and extends to 24-bits)
+
+1. Which of the formats supports animation?
+GIF supports animation- it enables transparency and interlacing (an image becomes progressively clearer as it downloads).  PNG and JPG do not. 
+
+2. What’s the difference between lossy and lossless compression?
+Lossy compression means that some data is lost (and not recoverable) every time you save a file.  Lossless means every bit of data in the original file remains after being uncompressed. 
+
+3. Which of these formats is lossy-compressed?
+JPG uses lossy compression.  GIF & PNG are lossless, and BMP doesn't allow image compression. 
+
+4. What happens, technically speaking, when a file is deleted on a FAT file system?
+The first character of the directory entry is modified to signal that it's been deleted and it's eligible for recycling, 
+and its FAT clusters are moved to the list of free clusters for reuse.  The file's reference is no longer included in the containing directory. 
+But that's it; the actual data is still intact until it's overwritten. There are also often multiple copies for redundancy. 
+
+5. What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+Use one of the sanitization products listed in the article!  These can overwrite the memory with something else (imperfect if we use ASCII NUL bytes, 
+since the magnetic field can suggest the previous value)- better to use multiple random passes.  Or, destroy it so it's not usable anymore.  
+Another option for the department of defense is to use a Degausser to reset the magnetic state. 
+
+6. What’s stdint.h?
+This is a header file defining different integer types we can use. 
+
+7. What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+First a little context: u is for unsigned (and anything without 'u'  is signed): signed can be positive or 
+negative, and unsigned assumes not-negative (and can therefore go up higher). The number corresponds to how 
+many bits it takes up. We use these in our bitmap copying because the format has a clear/rigid definition
+of the size and sequence of specific parts, so if we're saving off those parts individually, we want to use 
+the right size and type. 
+
+8. How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+BYTE: 1 byte (8 bits)
+DWORD: 4 bytes (32 bits)
+LONG: 4 bytes (32 bits)
+WORD: 2 bytes (16 bits)
+
+9. What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? 
+(Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+Based on the chart for bitmap, the first two bytes are the bftype word in the file header, and they are: 
+42 4D
+
+10. What’s the difference between bfSize and biSize?
+According to MSDN, the bisize is the size (in bytes) of 'the structure' (the BITMAPINFOHEADER), 
+and the bfsize is the size (in bytes) of the bitmap file all together (including that header). 
+
+11. What does it mean if biHeight is negative?
+According to MSDN, a negative biHeight means the origin of the bitmap is the upper-left corner so it's
+top-down. (Positive means lower-left origin, buttom-up). Where the origin is affects compression.  
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+That's the biBitCount: 1 for monochrome, 4 for up to 16 colors, 8 for up to 256 colors, up to 32 for 2^32 colors. 
+
+13. Why might fopen return NULL in copy.c:37?
+This can happen if something goes wrong; file doesn't exist, we run out of memory, etc. 
+
+14. Why is the third argument to fread always 1 in our code?
+That third argument is how many times we read in, and in this case we're reading specific pieces one at a time. 
+
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+a RGBTRIPLE is 3 bytes, and sizeof returns the number of bytes, so: 
+
+int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+               (4 -  (    3      *  3)               %4   %4
+               4 - (9 % 4) %4
+               4 - (5)%4
+               4 - 1
+               = 3
+
+16. What does fseek do?
+fseek sets us update the position of a pointer, for example skipping past padding to get to the next meat. 
+
+17. What is SEEK_CUR?
+SEEK_CUR indicates that the offset we're moving over is relative to our current location.  
+(Vs SEEK_SET- relative to beginning of the file- and SEEK_END, relative to the end)
+
+18. Whodunit?
+I see a picture of a guy smiling, with a suit and maybe a tie- I don't recognize him from Clue, but could ID him in a lineup :)
+I got that by replacing pure red pixels with white (remaining picture is very light blue). 
+I've tried a few other things to darken it, but so far everything obscures it. 
+
+Update: I know someone in the class who mentioned it was Rick Astley when they got it working, but mine is too faint to see him clearly

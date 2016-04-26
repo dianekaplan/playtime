@@ -1,0 +1,85 @@
+
+Diane Kaplan
+CS50
+
+0. What is pneumonoultramicroscopicsilicovolcanoconiosis?
+It's the longest word in the english language, at 45 characters.  It's a lung disease caused by the inhalation of crystalline silica dust. 
+
+1. According to its man page, what does getrusage do?
+This is a c function that returns resource usage statistics, like user/system CPU time used, size of shared memory, unshared data and stack size, messages sent & received
+
+2. Per that same man page, how many members are in a variable of type struct rusage?
+This struct has 16 members!
+
+3. Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+There's an awful lot stored in there; it's more efficient to send the address than try to pass along that big struct in memory. 
+
+4. Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. 
+In other words, convince us that you indeed understand how that function’s for loop works.
+
+We look character by character in our file, making a char array for the word and only adding onto it characters that are alphabetical or apostrophes. 
+We keep track of where we are with the index, and if we exceed the allowable maximum word length (invalid), advance through the file to get to the next valid word. 
+We do the same thing if a 'word' we're on contains a numerical digit since that's invalid too.  Otherwise (it's all alphabetical, and not too long): we add a 
+terminating character onto the end, increment our total count, take our before snapshot, run it through our spell check, and get our after snapshot. 
+
+5. Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? 
+Put another way, what problems might arise by relying on fscanf alone?
+
+By looking character by character we can watch for numeric digits, and we can see as soon as we've exceeded the maximum length 
+(instead of reading in a word that could be bigger than its holding size, which would overflow/segfault). 
+
+6. Why do you think we declared the parameters for check and load as const?
+
+Using const means that the parameters we pass in will not be changed by the function, 
+so the compiler can optimize for what this is (without having to allow for the possibility of it changing). 
+
+7. What data structure(s) did you use to implement your spell-checker? Be sure not to leave your answer at just "hash table," "trie," or the like. 
+Expound on what’s inside each of your "nodes."
+
+I made a trie, where each 'node' has an "is_word" bool and an array of 27 pointers to nodes: 1 for each letter of the alphabet, and 1 for apostrophe. 
+When loading each word in the dictionary, my program goes letter by letter, following the corresponding index in the array: following pointer if there is one, 
+otherwise malloc'ing a new node and pointing to it, and setting is_word true its last node. 
+
+8. How slow was your code the first time you got it working correctly?
+
+Once I fixed my bugs to get the unit tests all passing, my comparison time vs staff (using austinpowers.txt) was: 
+
+staff: 					                mine: 	
+WORDS MISSPELLED:     644					WORDS MISSPELLED:     644	
+WORDS IN DICTIONARY:  143091				WORDS IN DICTIONARY:  143091	
+WORDS IN TEXT:        19190					WORDS IN TEXT:        19190	
+TIME IN load:         0.02					TIME IN load:         0.07	
+TIME IN check:        0.01					TIME IN check:        0.01	
+TIME IN size:         0.00					TIME IN size:         0.00	
+TIME IN unload:       0.01					TIME IN unload:       0.06	
+TIME IN TOTAL:        0.04					TIME IN TOTAL:        0.14	
+
+It seems to fluctuate though- here's a test where we're much closer (yay!) but most are like the top one: 
+
+staff: 					                mine: 	
+WORDS MISSPELLED:     644					WORDS MISSPELLED:     644
+WORDS IN DICTIONARY:  143091				WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        19190					WORDS IN TEXT:        19190
+TIME IN load:         0.03					TIME IN load:         0.02
+TIME IN check:        0.01					TIME IN check:        0.02
+TIME IN size:         0.00					TIME IN size:         0.00
+TIME IN unload:       0.01					TIME IN unload:       0.01
+TIME IN TOTAL:        0.04					TIME IN TOTAL:        0.06
+
+
+9. What kinds of changes, if any, did you make to your code in order to improve its performance?
+
+The two places where I'm slower than the staff example are Unload and Load:
+
+a) for speeding up Unload: originally I made/used a recursive free_node() function that would go down to the furthest nodes in the trie (where
+all pointer elements in the children array were null) and free node by node, working back up. Going up and down and checking everywhere could be
+inefficient, so to reduce the time, I made a special linked list to keep track of the adddresses for nodes created, so then I could just free those up in sequence. 
+This did take off about 0.02 seconds from unload, but it added 0.01 seconds onto load (because whenever I malloc a new node in that function, now I also malloc
+a node in this other list to store the address. 
+
+b) for speeding up Load: I tried going back to malloc instead of calloc (since calloc has an added step to initialize to 0), but it made no speed difference so 
+I put it back. 
+
+10. Do you feel that your code has any bottlenecks that you were not able to chip away at?
+Load- I looked through the logic carefully, and I don't see anything to be streamlined.  There's an answer today in Discuss about malloc'ing in chunks instead of 
+individually by node- if I can get some more time after work I'll think on that, but next priority for evenings is watching this week's lectures. 

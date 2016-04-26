@@ -1,0 +1,18 @@
+questions.txt
+
+Diane Kaplan
+Computer Science 50
+Problem Set 3
+
+
+0. Besides 4 × 4 (which are Game of Fifteen’s dimensions), what other dimensions does the framework allow?
+Based on the current values of DIM_MIN and DIM_MAX, we can potentially make 3x3, 4x4, 5x5, 6x6, 7x7, 8x8, or 9x9
+
+1. With what sort of data structure is the game’s board represented?
+The game board is represented with an array of integer arrays
+
+2. What function is called to greet the player at game’s start?
+There's a greet function for this, displaying greeting text, and using usleep to pause before going back to main to start the game. 
+
+3. What functions do you apparently need to implement?
+I need to implement initialize, draw, move, and won

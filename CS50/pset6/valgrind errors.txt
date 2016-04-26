@@ -1,0 +1,125 @@
+==3145== 
+==3145== HEAP SUMMARY:
+==3145==     in use at exit: 0 bytes in 0 blocks
+==3145==   total heap usage: 13 allocs, 14 frees, 13,510 bytes allocated
+==3145== 
+==3145== All heap blocks were freed -- no leaks are possible
+==3145== 
+==3145== Use --track-origins=yes to see where uninitialised values come from
+==3145== ERROR SUMMARY: 33 errors from 29 contexts (suppressed: 0 from 0)
+==3145== 
+
+Known issue where we don't stop early when we don't have 512 bytes' worth, need to fix: 
+==3145== 1 errors in context 1 of 29:
+==3145== Syscall param write(buf) points to uninitialised byte(s)
+==3145==    at 0x5228870: __write_nocancel (syscall-template.S:81)
+==3145==    by 0x403AB2: respond (server.c:1062)
+==3145==    by 0x4037A8: transfer (server.c:1219)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x550578c is 316 bytes inside a block of size 512 alloc'd
+==3145==    at 0x4C2CE8E: realloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x403FFA: load (server.c:679)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+
+
+This is where I just do fclose(file);, not sure, could this be a cascading effect of the previous error?  
+==3145== 1 errors in context 2 of 29:
+==3145== Invalid free() / delete / delete[] / realloc()
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x403717: transfer (server.c:1207)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x5504cd0 is 0 bytes inside a block of size 568 free'd
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x40407F: load (server.c:695)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+
+
+Same as above
+==3145== 1 errors in context 3 of 29:
+==3145== Invalid write of size 4
+==3145==    at 0x51AAAD7: fclose@@GLIBC_2.2.5 (iofclose.c:84)
+==3145==    by 0x403717: transfer (server.c:1207)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x5504cd0 is 0 bytes inside a block of size 568 free'd
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x40407F: load (server.c:695)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+
+
+Same as above
+==3145== 1 errors in context 4 of 29:
+==3145== Invalid read of size 8
+==3145==    at 0x51AAAF0: fclose@@GLIBC_2.2.5 (iofclose.c:79)
+==3145==    by 0x403717: transfer (server.c:1207)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x5504d18 is 72 bytes inside a block of size 568 free'd
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x40407F: load (server.c:695)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+
+
+Same as above
+==3145== 1 errors in context 5 of 29:
+==3145== Invalid read of size 4
+==3145==    at 0x51AAA3F: fclose@@GLIBC_2.2.5 (iofclose.c:64)
+==3145==    by 0x403717: transfer (server.c:1207)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x5504d90 is 192 bytes inside a block of size 568 free'd
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x40407F: load (server.c:695)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+
+
+Same as above
+==3145== 1 errors in context 6 of 29:
+==3145== Invalid read of size 1
+==3145==    at 0x51B7A99: _IO_un_link (genops.c:61)
+==3145==    by 0x51AAA3E: fclose@@GLIBC_2.2.5 (iofclose.c:63)
+==3145==    by 0x403717: transfer (server.c:1207)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x5504cd0 is 0 bytes inside a block of size 568 free'd
+==3145==    at 0x4C2BDEC: free (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3145==    by 0x51AAAE4: fclose@@GLIBC_2.2.5 (iofclose.c:85)
+==3145==    by 0x40407F: load (server.c:695)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+(several more repeats, and another 4 at the end)
+
+This is where I call fclose(outptr);
+==3145== 
+==3145== 
+==3145== 1 errors in context 21 of 29:
+==3145== Syscall param write(buf) points to uninitialised byte(s)
+==3145==    at 0x5228870: __write_nocancel (syscall-template.S:81)
+==3145==    by 0x51B6002: _IO_file_write@@GLIBC_2.2.5 (fileops.c:1261)
+==3145==    by 0x51B74DB: _IO_do_write@@GLIBC_2.2.5 (fileops.c:538)
+==3145==    by 0x51B6D5F: _IO_file_close_it@@GLIBC_2.2.5 (fileops.c:165)
+==3145==    by 0x51AAB0F: fclose@@GLIBC_2.2.5 (iofclose.c:59)
+==3145==    by 0x40408B: load (server.c:698)
+==3145==    by 0x4036EE: transfer (server.c:1200)
+==3145==    by 0x401D39: main (server.c:261)
+==3145==  Address 0x402713c is not stack'd, malloc'd or (recently) free'd
+
+Hmm- cursor was absolutely initialized, and I use NULL in the strtok line as this tutorial showed: 
+http://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
+==3145== 1 errors in context 22 of 29:
+==3145== Conditional jump or move depends on uninitialised value(s)
+==3145==    at 0x51C8AC9: strtok (strtok.S:177)
+==3145==    by 0x402732: parse (server.c:799)
+==3145==    by 0x401A2A: main (server.c:186)
+==3145== 
+==3145== 
+(3 more of the same complaint)
+
+
+==3145== ERROR SUMMARY: 33 errors from 29 contexts (suppressed: 0 from 0)

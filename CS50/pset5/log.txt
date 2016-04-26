@@ -1,0 +1,6 @@
+The thing saved at your pointer is: 5
+And here are some numbers:
+1
+2
+3
+4

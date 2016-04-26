@@ -1,0 +1,138 @@
+US	01887	Wilmington	Massachusetts	MA	Middlesex	017			42.5581	-71.1723	
+US	01888	Woburn	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	01889	North Reading	Massachusetts	MA	Middlesex	017			42.5716	-71.1096	
+US	01890	Winchester	Massachusetts	MA	Middlesex	017			42.453	-71.1441	
+US	02138	Cambridge	Massachusetts	MA	Middlesex	017			42.377	-71.1256	
+US	02139	Cambridge	Massachusetts	MA	Middlesex	017			42.3647	-71.1042	
+US	02140	Cambridge	Massachusetts	MA	Middlesex	017			42.3932	-71.1338	
+US	02141	Cambridge	Massachusetts	MA	Middlesex	017			42.3687	-71.0836	
+US	02142	Cambridge	Massachusetts	MA	Middlesex	017			42.362	-71.083	
+US	02143	Somerville	Massachusetts	MA	Middlesex	017			42.3829	-71.1028	
+US	02144	Somerville	Massachusetts	MA	Middlesex	017			42.4003	-71.1221	
+US	02145	Somerville	Massachusetts	MA	Middlesex	017			42.3907	-71.0929	
+US	02148	Malden	Massachusetts	MA	Middlesex	017			42.4291	-71.0605	
+US	02149	Everett	Massachusetts	MA	Middlesex	017			42.4112	-71.0514	
+US	02153	Medford	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02154	Waltham	Massachusetts	MA	Middlesex	017			42.3889	-71.2398	
+US	02155	Medford	Massachusetts	MA	Middlesex	017			42.4173	-71.1087	
+US	02156	West Medford	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02158	Newton	Massachusetts	MA	Middlesex	017			42.3537	-71.1881	
+US	02159	Newton	Massachusetts	MA	Middlesex	017			42.3161	-71.1912	
+US	02160	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02161	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02162	Newton	Massachusetts	MA	Middlesex	017			42.3319	-71.2541	
+US	02164	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02165	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02166	Auburndale	Massachusetts	MA	Middlesex	017			42.3461	-71.2431	
+US	02167	Chestnut Hill	Massachusetts	MA	Middlesex	017			42.3208	-71.1698	
+US	02168	Waban	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02172	Watertown	Massachusetts	MA	Middlesex	017			42.3726	-71.178	
+US	02173	Lexington	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02174	Arlington	Massachusetts	MA	Middlesex	017			42.4177	-71.1671	
+US	02175	Arlington Heights	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02176	Melrose	Massachusetts	MA	Middlesex	017			42.4581	-71.0632	
+US	02177	Melrose	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02178	Belmont	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02179	Waverley	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02180	Stoneham	Massachusetts	MA	Middlesex	017			42.4828	-71.0978	
+US	02193	Weston	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02195	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02212	Boston	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02238	Cambridge	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02239	Cambridge	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02254	Waltham	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02258	Newton	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02272	Watertown	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02277	Watertown	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02420	Lexington	Massachusetts	MA	Middlesex	017			42.4563	-71.2167	
+US	02421	Lexington	Massachusetts	MA	Middlesex	017			42.4426	-71.2265	
+US	02451	Waltham	Massachusetts	MA	Middlesex	017			42.3986	-71.2451	
+US	02452	Waltham	Massachusetts	MA	Middlesex	017			42.3943	-71.218	
+US	02453	Waltham	Massachusetts	MA	Middlesex	017			42.3654	-71.2317	
+US	02454	Waltham	Massachusetts	MA	Middlesex	017			42.3567	-71.2505	
+US	02455	North Waltham	Massachusetts	MA	Middlesex County	017			42.3621	-71.2055	
+US	02456	New Town	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02458	Newton	Massachusetts	MA	Middlesex	017			42.3528	-71.1875	
+US	02459	Newton Center	Massachusetts	MA	Middlesex	017			42.3341	-71.1833	
+US	02460	Newtonville	Massachusetts	MA	Middlesex	017			42.352	-71.2084	
+US	02461	Newton Highlands	Massachusetts	MA	Middlesex	017			42.3168	-71.2084	
+US	02462	Newton Lower Falls	Massachusetts	MA	Middlesex	017			42.3299	-71.2562	
+US	02464	Newton Upper Falls	Massachusetts	MA	Middlesex	017			42.3129	-71.2195	
+US	02465	West Newton	Massachusetts	MA	Middlesex	017			42.3492	-71.2267	
+US	02466	Auburndale	Massachusetts	MA	Middlesex	017			42.3441	-71.248	
+US	02467	Chestnut Hill	Massachusetts	MA	Middlesex	017			42.3164	-71.1612	
+US	02468	Waban	Massachusetts	MA	Middlesex	017			42.3271	-71.2315	
+US	02471	Watertown	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02472	Watertown	Massachusetts	MA	Middlesex	017			42.37	-71.1773	
+US	02474	Arlington	Massachusetts	MA	Middlesex	017			42.4202	-71.1565	
+US	02475	Arlington Heights	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02476	Arlington	Massachusetts	MA	Middlesex	017			42.4162	-71.1752	
+US	02477	Watertown	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02478	Belmont	Massachusetts	MA	Middlesex	017			42.4128	-71.2044	
+US	02479	Waverley	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02493	Weston	Massachusetts	MA	Middlesex	017			42.3589	-71.3001	
+US	02495	Nonantum	Massachusetts	MA	Middlesex	017			42.4464	-71.4594	
+US	02554	Nantucket	Massachusetts	MA	Nantucket	019			41.2725	-70.0932	
+US	02564	Siasconset	Massachusetts	MA	Nantucket	019			41.2639	-69.9626	
+US	02584	Nantucket	Massachusetts	MA	Nantucket	019			41.2778	-70.046	
+US	02019	Bellingham	Massachusetts	MA	Norfolk	021			42.0746	-71.4768	
+US	02021	Canton	Massachusetts	MA	Norfolk	021			42.1645	-71.1355	
+US	02025	Cohasset	Massachusetts	MA	Norfolk	021			42.2395	-70.8128	
+US	02026	Dedham	Massachusetts	MA	Norfolk	021			42.2437	-71.1637	
+US	02027	Dedham	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02030	Dover	Massachusetts	MA	Norfolk	021			42.2362	-71.2854	
+US	02032	East Walpole	Massachusetts	MA	Norfolk	021			42.1532	-71.2179	
+US	02035	Foxboro	Massachusetts	MA	Norfolk	021			42.0649	-71.2441	
+US	02038	Franklin	Massachusetts	MA	Norfolk	021			42.0935	-71.4058	
+US	02052	Medfield	Massachusetts	MA	Norfolk	021			42.1845	-71.3048	
+US	02053	Medway	Massachusetts	MA	Norfolk	021			42.1514	-71.4217	
+US	02054	Millis	Massachusetts	MA	Norfolk	021			42.1669	-71.3607	
+US	02056	Norfolk	Massachusetts	MA	Norfolk	021			42.1177	-71.3269	
+US	02062	Norwood	Massachusetts	MA	Norfolk	021			42.1868	-71.2033	
+US	02067	Sharon	Massachusetts	MA	Norfolk	021			42.1094	-71.1759	
+US	02070	Sheldonville	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02071	South Walpole	Massachusetts	MA	Norfolk	021			42.0992	-71.2752	
+US	02072	Stoughton	Massachusetts	MA	Norfolk	021			42.1253	-71.1074	
+US	02081	Walpole	Massachusetts	MA	Norfolk	021			42.1444	-71.2544	
+US	02090	Westwood	Massachusetts	MA	Norfolk	021			42.2148	-71.2104	
+US	02093	Wrentham	Massachusetts	MA	Norfolk	021			42.0617	-71.3396	
+US	02146	Brookline	Massachusetts	MA	Norfolk	021			42.3082	-71.0887	
+US	02147	Brookline Village	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02157	Babson Park	Massachusetts	MA	Norfolk	021			42.1739	-71.1855	
+US	02169	Quincy	Massachusetts	MA	Norfolk	021			42.2491	-70.9978	
+US	02170	Quincy	Massachusetts	MA	Norfolk	021			42.2671	-71.0186	
+US	02171	Quincy	Massachusetts	MA	Norfolk	021			42.2825	-71.0241	
+US	02181	Wellesley	Massachusetts	MA	Norfolk	021			42.3006	-71.2788	
+US	02184	Braintree	Massachusetts	MA	Norfolk	021			42.2093	-70.9963	
+US	02185	Braintree	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02186	Milton	Massachusetts	MA	Norfolk	021			42.2537	-71.0771	
+US	02187	Milton Village	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02188	Weymouth	Massachusetts	MA	Norfolk	021			42.2113	-70.9582	
+US	02189	Weymouth	Massachusetts	MA	Norfolk	021			42.2116	-70.9317	
+US	02190	Weymouth	Massachusetts	MA	Norfolk	021			42.1728	-70.9487	
+US	02191	Weymouth	Massachusetts	MA	Norfolk	021			42.2436	-70.9443	
+US	02192	Needham	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02194	Needham	Massachusetts	MA	Norfolk	021			42.2925	-71.2258	
+US	02269	Quincy	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02322	Avon	Massachusetts	MA	Norfolk	021			42.1258	-71.0437	
+US	02343	Holbrook	Massachusetts	MA	Norfolk	021			42.1464	-71.0083	
+US	02363	Plymouth	Massachusetts	MA	Norfolk County	021			41.9236	-70.6569	
+US	02368	Randolph	Massachusetts	MA	Norfolk	021			42.1736	-71.0514	
+US	02445	Brookline	Massachusetts	MA	Norfolk	021			42.3259	-71.1341	
+US	02446	Brookline	Massachusetts	MA	Norfolk	021			42.3431	-71.123	
+US	02447	Brookline Village	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02457	Babson Park	Massachusetts	MA	Norfolk	021			42.18	-71.0892	
+US	02481	Wellesley Hills	Massachusetts	MA	Norfolk	021			42.3106	-71.2747	
+US	02482	Wellesley	Massachusetts	MA	Norfolk	021			42.2945	-71.2992	
+US	02492	Needham	Massachusetts	MA	Norfolk	021			42.2798	-71.2501	
+US	02494	Needham	Massachusetts	MA	Norfolk	021			42.2997	-71.2321	
+US	02762	Plainville	Massachusetts	MA	Norfolk	021			42.0124	-71.3275	
+US	02018	Accord	Massachusetts	MA	Plymouth	023			41.9705	-70.7014	
+US	02020	Brant Rock	Massachusetts	MA	Plymouth	023			42.0818	-70.6439	
+US	02040	Greenbush	Massachusetts	MA	Plymouth	023			41.9705	-70.7014	
+US	02041	Green Harbor	Massachusetts	MA	Plymouth	023			42.0696	-70.6491	
+US	02043	Hingham	Massachusetts	MA	Plymouth	023			42.2245	-70.8911	
+US	02044	Hingham	Massachusetts	MA	Plymouth	023			41.9705	-70.7014	
+US	02045	Hull	Massachusetts	MA	Plymouth	023			42.2853	-70.8754	
+US	02047	Humarock	Massachusetts	MA	Plymouth	023			42.1428	-70.6935	
+US	99503	Anchorage	Alaska	AK	Anchorage Municipality	020			61.19	-149.8938	
